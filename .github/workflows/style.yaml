@@ -70,7 +70,7 @@ jobs:
           if: ${{ success() }}
           uses: peter-evans/repository-dispatch@v2
           with:
-            token: ${{ secrets.REPO_GHA_PAT }}
+            token: ${{ secrets.GITHUB_TOKEN }}
             repository: ${{ github.repository }}
             event-type: trigger-workflow-document
             client-payload: '{"ref": "${{ github.ref }}", "sha": "${{ github.sha }}"}'
