@@ -1,6 +1,6 @@
 #' Original Business Cycle Anatomy Dataset
 #'
-#' Pulled from the replication files and transformed into a tibble. 
+#' Pulled from the replication files and transformed into a tibble.
 #' Ten U.S. macro time series from 1955 to 2017.
 #'
 #' @format ## `original_bcadata`
