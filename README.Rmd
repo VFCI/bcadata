@@ -24,6 +24,7 @@ The goal of bcadata is to replicate and update the data used by Angeletos, Colla
 The package pulls most of the data from [FRED](https://fred.stlouisfed.org) and TFP data from the [San Francisco Fed](https://www.frbsf.org/economic-research/indicators-data/total-factor-productivity-tfp/).
 
 The data series constructed are:
+
 * output, Real GDP per capita
 * investment, Real investment per capita 
 * consumption, Real consumption per capita 
