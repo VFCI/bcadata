@@ -26,9 +26,14 @@ pull_fred_data <- function(fred_api_key) {
     ff = "FEDFUNDS"
   )
 
+  my_fredr <- function(series, frequency){
+    agg <- ifelse(series == "CNP16OV", "eop", "avg")
+    fredr::fredr(series, frequency = frequency, aggregation_method = agg)
+  }
+
   data <- Reduce(rbind, lapply(
-    series, fredr::fredr,
-    frequency = "q", aggregation_method = "eop"
+    series, my_fredr,
+    frequency = "q"
   ))
 
   data <- data[, c("date", "series_id", "value")]
