@@ -18,6 +18,7 @@ LazyData: true
 Imports: 
     dplyr,
     fredr,
+    lubridate,
     openxlsx,
     tidyr,
     zoo
