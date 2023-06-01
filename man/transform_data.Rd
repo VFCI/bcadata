@@ -17,8 +17,3 @@ A tibble/data.frame
 \description{
 Merge FRED, TFP data and construct correct series
 }
-\examples{
-\dontrun{
-data <- transform_data(fred_data, tfp_data)
-}
-}

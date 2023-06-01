@@ -15,8 +15,3 @@ A tibble/data.frame
 \description{
 Pull data from FRED
 }
-\examples{
-\dontrun{
-data <- pull_fred_data("XXXXXXXXXXX")
-}
-}

@@ -4,10 +4,6 @@
 #'
 #' @return A tibble/data.frame
 #'
-#' @examples
-#' \dontrun{
-#' data <- pull_fred_data("XXXXXXXXXXX")
-#' }
 pull_fred_data <- function(fred_api_key) {
   fredr::fredr_set_key(fred_api_key)
 

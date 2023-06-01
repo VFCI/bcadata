@@ -2,8 +2,6 @@
 #'
 #' @return A tibble/data.frame
 #'
-#' @examples
-#' data <- pull_tfp_data()
 pull_tfp_data <- function() {
   tfp_link <-
     "http://www.frbsf.org/economic-research/files/quarterly_tfp.xlsx"

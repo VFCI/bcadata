@@ -16,7 +16,7 @@
 #'   \item{interest}{Fed Funds interest rate (quarterly rate, not annual)}
 #'   \item{inflation}{Inflation rate, from GDP price deflator}
 #'   \item{productivity}{Productivity (NFB)}
-#'   \item{TFP}{Total Factor Productivity shocks}
+#'   \item{TFP}{Total Factor Productivity cummalitive}
 #' }
 #' @source <https://www.openicpsr.org/openicpsr/project/118082/version/V1/view>
 "original_bcadata"

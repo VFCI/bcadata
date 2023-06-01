@@ -12,6 +12,3 @@ A tibble/data.frame
 \description{
 Pull TFP data from San Franciso Fed website
 }
-\examples{
-data <- pull_tfp_data()
-}

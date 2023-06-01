@@ -6,10 +6,6 @@
 #'
 #' @return A tibble/data.frame
 #'
-#' @examples
-#' \dontrun{
-#' data <- transform_data(fred_data, tfp_data)
-#' }
 transform_data <- function(fred_data, tfp_data) {
   df <- dplyr::full_join(fred_data, tfp_data, by = "date")
 
@@ -20,6 +16,11 @@ transform_data <- function(fred_data, tfp_data) {
     dplyr::filter(lubridate::year(date) == 2009) |>
     dplyr::pull(labor_sh) |>
     mean()
+
+  df <- df |>
+    dplyr::mutate(
+      labor_sh = 100 * (labor_sh / lsh2009),
+    )
 
   ## Back out pop from gdp
   df <- df |>
@@ -32,15 +33,10 @@ transform_data <- function(fred_data, tfp_data) {
       inflation = 100 * log(gdpdef / dplyr::lag(gdpdef, 1)),
       interest = ff / 4,
       productivity = 100 * log(oph),
-      labor_sh = labor_sh / lsh2009,
       labor_share = 100 * log(labor_sh),
       TFP = 100 * cumsum(dtfp_util / 400),
       unemployment = ur
     )
-
-  ## Start the TFP series counting from 0
-  df <- df |>
-    dplyr::mutate(TFP - df[1, "TFP"])
 
   df <- df |>
     dplyr::select(c(
@@ -52,6 +48,10 @@ transform_data <- function(fred_data, tfp_data) {
   df <- df |>
     dplyr::filter(lubridate::year(date) >= 1955) |>
     tidyr::drop_na()
+
+  ## Start the TFP series counting from 0
+  df <- df |>
+    dplyr::mutate(TFP = TFP - df[[1, "TFP"]])
 
   return(df)
 }
