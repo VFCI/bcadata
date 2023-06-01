@@ -52,6 +52,8 @@ You can get an API key
 There are two functions exported from the package:
 
 ``` r
+require(bcadata)
+
 ## Construct the updated data series
 df <- pull_bcadata(fred_api_key = "XXXXXXXXXXXX")
 
