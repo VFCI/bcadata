@@ -10,7 +10,6 @@
 #' data <- pull_bcadata("XXXXXXXXXXX")
 #' }
 pull_bcadata <- function(fred_api_key) {
-
   fred_data <- pull_fred_data(fred_api_key)
 
   tfp_data <- pull_tfp_data()
