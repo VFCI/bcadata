@@ -1,7 +1,7 @@
 if (requireNamespace("httr", quietly = TRUE)) {
   test_that("TFP link is valid", {
     http_status_ok <- 200
-    tfp_link <- 
+    tfp_link <-
       "http://www.frbsf.org/economic-research/files/quarterly_tfp.xlsx"
     expect_equal(httr::HEAD(tfp_link)$status, http_status_ok)
   })
