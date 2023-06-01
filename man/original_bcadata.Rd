@@ -19,7 +19,7 @@ A data frame with 252 rows and 11 columns:
 \item{interest}{Fed Funds interest rate (quarterly rate, not annual)}
 \item{inflation}{Inflation rate, from GDP price deflator}
 \item{productivity}{Productivity (NFB)}
-\item{TFP}{Total Factor Productivity shocks}
+\item{TFP}{Total Factor Productivity cummalitive}
 }
 }
 }
