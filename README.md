@@ -16,13 +16,18 @@ The package pulls most of the data from
 [FRED](https://fred.stlouisfed.org) and TFP data from the [San Francisco
 Fed](https://www.frbsf.org/economic-research/indicators-data/total-factor-productivity-tfp/).
 
-The data series constructed are: \* output, Real GDP per capita \*
-investment, Real investment per capita \* consumption, Real consumption
-per capita \* hours_worked, Hours Worked \* unemployment, Unemployment
-Rate (as percent) \* labor_share, Labor share of output \* interest, Fed
-Funds interest rate (quarterly rate, not annual) \* inflation, Inflation
-rate, from GDP price deflator \* productivity, Productivity (NFB) \*
-TFP, Total Factor Productivity cummulative
+The data series constructed are:
+
+- output, Real GDP per capita
+- investment, Real investment per capita
+- consumption, Real consumption per capita
+- hours_worked, Hours Worked
+- unemployment, Unemployment Rate (as percent)
+- labor_share, Labor share of output
+- interest, Fed Funds interest rate (quarterly rate, not annual)
+- inflation, Inflation rate, from GDP price deflator
+- productivity, Productivity (NFB)
+- TFP, Total Factor Productivity cummulative
 
 ## Installation
 
