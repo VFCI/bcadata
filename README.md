@@ -66,5 +66,3 @@ files](https://www.openicpsr.org/openicpsr/project/118082/version/V1/view).
 ``` r
 original_bcadata
 ```
-
-## Comparison Chart
