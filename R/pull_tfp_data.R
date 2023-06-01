@@ -1,7 +1,6 @@
 #' Pull TFP data from San Franciso Fed website
 #'
 #' @return A tibble/data.frame
-#' @export
 #'
 #' @examples
 #' data <- pull_tfp_data()

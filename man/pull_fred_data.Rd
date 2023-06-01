@@ -10,7 +10,7 @@ pull_fred_data(fred_api_key)
 \item{fred_api_key}{API key from FRED}
 }
 \value{
-A tibble/data.frame.
+A tibble/data.frame
 }
 \description{
 Pull data from FRED

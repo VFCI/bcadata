@@ -2,8 +2,7 @@
 #'
 #' @param fred_api_key API key from FRED
 #'
-#' @return A tibble/data.frame.
-#' @export
+#' @return A tibble/data.frame
 #'
 #' @examples
 #' \dontrun{

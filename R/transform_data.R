@@ -5,7 +5,6 @@
 #' @param tfp_data Data.frame from pull_tfp_data
 #'
 #' @return A tibble/data.frame
-#' @export
 #'
 #' @examples
 #' \dontrun{
