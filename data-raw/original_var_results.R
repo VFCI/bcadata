@@ -20,7 +20,8 @@ var_names <- tibble(
 
 ## Read in and organize the data behind Figure 1
 ## Bayesian VAR results, frequency domain, unemployment target
-file <- h5file("./data-raw/var_results/benchmark_var_1955_2017_fd_sr.mat", mode = "r")
+file <- h5file(
+    "./data-raw/var_results/benchmark_var_1955_2017_fd_sr.mat", mode = "r")
 
 irf <- file$open("IRFsr")$read()
 
@@ -51,7 +52,7 @@ irf_summ <- irf_df |>
 ## Only keep the results that target unemployment
 irf_summ <- irf_summ |> filter(target_variable == 5) |> select(-target_variable)
 
-df <- left_join(irf_summ, var_names, by = "variable") |> 
+df <- left_join(irf_summ, var_names, by = "variable") |>
     select(-variable) |>
     rename(variable = "varnames")
 
@@ -59,7 +60,8 @@ df_bvar_fd <- df |> mutate(model = "bayesian_fd")
 
 
 ## Repeat process for other var_results: Time Domain targetting 0 - 4 qtrs
-file <- h5file("./data-raw/var_results/benchmark_var_1955_2017_td4.mat", mode = "r")
+file <- h5file(
+    "./data-raw/var_results/benchmark_var_1955_2017_td4.mat", mode = "r")
 
 ## 'm' is for median
 mirf <- file$open("mirf")$read()
@@ -86,7 +88,7 @@ df <- mirf_df |>
     left_join(lirf_df, by = c("horizon", "variable")) |>
     left_join(sirf_df, by = c("horizon", "variable"))
 
-df <- left_join(df, var_names, by = "variable") |> 
+df <- left_join(df, var_names, by = "variable") |>
     select(-variable) |>
     rename(variable = "varnames")
 
@@ -94,7 +96,8 @@ df_bvar_td4 <- df |> mutate(model = "bayesian_td4")
 
 
 ## Repeat process for other var_results: Time Domain targetting 6 - 32 qtrs
-file <- h5file("./data-raw/var_results/benchmark_var_1955_2017_td632.mat", mode = "r")
+file <- h5file(
+    "./data-raw/var_results/benchmark_var_1955_2017_td632.mat", mode = "r")
 
 ## 'm' is for median
 mirf <- file$open("mirf")$read()
@@ -121,7 +124,7 @@ df <- mirf_df |>
     left_join(lirf_df, by = c("horizon", "variable")) |>
     left_join(sirf_df, by = c("horizon", "variable"))
 
-df <- left_join(df, var_names, by = "variable") |> 
+df <- left_join(df, var_names, by = "variable") |>
     select(-variable) |>
     rename(variable = "varnames")
 
@@ -129,7 +132,8 @@ df_bvar_td632 <- df |> mutate(model = "bayesian_td632")
 
 
 ## Repeat process for other var_results: Classical VAR, frequency domain
-file <- h5file("./data-raw/var_results/classical_var_1955_2017_fd_sr.mat", mode = "r")
+file <- h5file(
+    "./data-raw/var_results/classical_var_1955_2017_fd_sr.mat", mode = "r")
 
 ## 'm' is for median
 mirf <- file$open("mirf")$read()
@@ -151,7 +155,7 @@ df <- mirf_df |>
     left_join(lirf_df, by = c("horizon", "variable")) |>
     left_join(sirf_df, by = c("horizon", "variable"))
 
-df <- left_join(df, var_names, by = "variable") |> 
+df <- left_join(df, var_names, by = "variable") |>
     select(-variable) |>
     rename(variable = "varnames")
 
@@ -159,7 +163,7 @@ df_var_fd <- df |> mutate(model = "classical_fd")
 
 
 ## Combine all the models
-original_var_results <- 
+original_var_results <-
     Reduce(rbind, list(
         df_bvar_fd,
         df_bvar_td4,

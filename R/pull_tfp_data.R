@@ -6,9 +6,10 @@
 #'
 pull_tfp_data <- function(vintage = FALSE) {
   if (vintage == TRUE) {
-    vintage_link <-
-      "https://drive.google.com/uc?export=download&id=1Amw-RcqwekawJbNvSFLzOE9w3DvjF9tt" # 2018-05
-
+    vintage_link <- paste0(
+      "https://drive.google.com/uc?export=download",
+      "&id=1Amw-RcqwekawJbNvSFLzOE9w3DvjF9tt"
+    )
     tfp_link <- tempfile(fileext = ".xlsx")
 
     utils::download.file(vintage_link, tfp_link)
