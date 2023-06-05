@@ -4,10 +4,12 @@
 \alias{pull_fred_data}
 \title{Pull data from FRED}
 \usage{
-pull_fred_data(fred_api_key)
+pull_fred_data(fred_api_key, vintage = F)
 }
 \arguments{
 \item{fred_api_key}{API key from FRED}
+
+\item{vintage}{Boolean, use original paper vintage}
 }
 \value{
 A tibble/data.frame
