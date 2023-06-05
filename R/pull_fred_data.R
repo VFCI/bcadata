@@ -27,7 +27,7 @@ pull_fred_data <- function(fred_api_key) {
   )
 
   my_fredr <- function(series, frequency) {
-    agg <- ifelse(series == "CNP16OV", "eop", "avg")
+    agg <- ifelse(series == "CE16OV", "eop", "avg")
     fredr::fredr(series, frequency = frequency, aggregation_method = agg)
   }
 
