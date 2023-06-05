@@ -63,7 +63,12 @@ df <- pull_bcadata(fred_api_key = "XXXXXXXXXXXX")
 compare_bcadata(df)
 ```
 
-Finally, the package includes the original dataset from the [author's replication files](https://www.openicpsr.org/openicpsr/project/118082/version/V1/view).
+The package includes the original dataset from the [author's replication files](https://www.openicpsr.org/openicpsr/project/118082/version/V1/view).
 ``` r 
 original_bcadata
+```
+
+And a tidy dataset of the VAR impulse response functions shown in the paper and appendix, for Figure 1, Figure 15 (a), and Figure 20.
+``` r 
+original_var_results
 ```
