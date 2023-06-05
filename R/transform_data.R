@@ -49,9 +49,9 @@ transform_data <- function(fred_data, tfp_data) {
     dplyr::filter(lubridate::year(date) >= 1955) |>
     tidyr::drop_na()
 
-  ## Start the TFP series counting from 0
+  ## Start the TFP series counting from same initial value as the paper
   df <- df |>
-    dplyr::mutate(TFP = TFP - df[[1, "TFP"]])
+    dplyr::mutate(TFP = TFP - df[[1, "TFP"]] - 0.46)
 
   return(df)
 }

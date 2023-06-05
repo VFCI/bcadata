@@ -74,3 +74,22 @@ paper and appendix, for Figure 1, Figure 15 (a), and Figure 20.
 ``` r
 original_var_results
 ```
+
+## Vintage data
+
+There is also an option to use vintage data sources, in order to
+perfectly match the original paper dataset.
+
+Data for TFP is pulled from [John G. Fernald’s
+website](https://www.johnfernald.net/TFP) where he stores archived
+versions of the TFP data hosted at the San Francisco Fed. To replicate
+the original paper, the package pulls the file
+`data_quarterly_2018.05.03.xlsx`.
+
+To access vintages of the other data, the package makes use of ALFRED.
+
+To use the vintage links:
+
+``` r
+df <- pull_bcadata(fred_api_key = "XXXXXXXXXXXX", vintage = T)
+```

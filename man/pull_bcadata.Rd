@@ -4,10 +4,12 @@
 \alias{pull_bcadata}
 \title{Reconstruct BCA data from raw sources: FRED and TFP}
 \usage{
-pull_bcadata(fred_api_key)
+pull_bcadata(fred_api_key, vintage = FALSE)
 }
 \arguments{
 \item{fred_api_key}{API key from FRED}
+
+\item{vintage}{Boolean, use original paper vintage}
 }
 \value{
 A tibble/data.frame
