@@ -10,8 +10,7 @@
 #' \dontrun{
 #' data <- pull_bcadata("XXXXXXXXXXX")
 #' }
-pull_bcadata <- function(fred_api_key, vintage = FALSE){
-
+pull_bcadata <- function(fred_api_key, vintage = FALSE) {
   fred_data <- pull_fred_data(fred_api_key)
 
   tfp_data <- pull_tfp_data(vintage)
