@@ -1,11 +1,11 @@
 #' Pull TFP data from San Franciso Fed website
 #'
-#' @param vintage Boolean, use original paper vintage
+#' @param replicate Boolean, use original paper vintage
 #'
 #' @return A tibble/data.frame
 #'
-pull_tfp_data <- function(vintage = FALSE) {
-  if (vintage == TRUE) {
+pull_tfp_data <- function(replicate = FALSE) {
+  if (replicate == TRUE) {
     vintage_link <- paste0(
       "https://drive.google.com/uc?export=download",
       "&id=1Amw-RcqwekawJbNvSFLzOE9w3DvjF9tt"

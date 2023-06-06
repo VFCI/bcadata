@@ -4,12 +4,14 @@
 \alias{pull_fred_data}
 \title{Pull data from FRED}
 \usage{
-pull_fred_data(fred_api_key, vintage = F)
+pull_fred_data(fred_api_key, replicate = FALSE, vintage_date = NULL)
 }
 \arguments{
 \item{fred_api_key}{API key from FRED}
 
-\item{vintage}{Boolean, use original paper vintage}
+\item{replicate}{Boolean, use original paper vintage}
+
+\item{vintage_date}{String date ("yyyy-mm-dd"), use given date as vintage}
 }
 \value{
 A tibble/data.frame

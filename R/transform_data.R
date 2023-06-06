@@ -25,7 +25,9 @@ transform_data <- function(fred_data, tfp_data) {
   ## Back out pop from gdp
   df <- df |>
     dplyr::mutate(
-      pop2 = rgdp / gdpcap,
+      pop2 = rgdp / gdpcap
+    ) |>
+    dplyr::mutate(
       output = 100 * log(gdpcap),
       consumption = 100 * log((sh_nondur + sh_ser) * gdpcap),
       investment = 100 * log((sh_dur + sh_inv) * gdpcap),

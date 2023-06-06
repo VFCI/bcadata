@@ -1,13 +1,21 @@
 #' Pull data from FRED
 #'
 #' @param fred_api_key API key from FRED
-#' @param vintage Boolean, use original paper vintage
+#' @param replicate Boolean, use original paper vintage
+#' @param vintage_date String date ("yyyy-mm-dd"), use given date as vintage
 #'
 #' @return A tibble/data.frame
 #'
-pull_fred_data <- function(fred_api_key, vintage = F) {
+pull_fred_data <- function(
+  fred_api_key,
+  replicate = FALSE,
+  vintage_date = NULL
+  ) {
   qdate <- value <- NULL
   fredr::fredr_set_key(fred_api_key)
+
+  ## Note that rgdp has a slightly later date, set in my_alfredr
+  if (replicate == TRUE) vintage_date <- c("2018-07-26")
 
   ## Fred series codes that are pulled
   series <- c(
@@ -33,9 +41,12 @@ pull_fred_data <- function(fred_api_key, vintage = F) {
     fredr::fredr(series, frequency = frequency, aggregation_method = agg)
   }
 
-  my_alfredr <- function(series) {
+  my_alfredr <- function(series, vintage_date) {
+
+    if (replicate == TRUE && series == "GDPC1") vintage_date <- "2018-07-28"
+
     df <- alfred::get_alfred_series(series, "value",
-      realtime_start = "2018-05-01", realtime_end = "2018-05-01"
+      realtime_start = vintage_date, realtime_end = vintage_date
     ) |>
       dplyr::as_tibble() |>
       dplyr::select(date, value)
@@ -48,28 +59,28 @@ pull_fred_data <- function(fred_api_key, vintage = F) {
     if (series == "CE16OV") {
       df <- df |>
         dplyr::group_by(qdate) |>
-        dplyr::summarize(value = mean(value)) |>
+        dplyr::filter(date == max(date)) |>
         dplyr::mutate(date = qdate) |>
         dplyr::ungroup()
     }
     if (series == "UNRATE") {
       df <- df |>
         dplyr::group_by(qdate) |>
-        dplyr::filter(date == max(date)) |>
+        dplyr::summarize(value = mean(value)) |>
         dplyr::mutate(date = qdate) |>
         dplyr::ungroup()
     }
     if (series == "FEDFUNDS") {
       df <- df |>
         dplyr::group_by(qdate) |>
-        dplyr::filter(date == max(date)) |>
+        dplyr::summarize(value = mean(value)) |>
         dplyr::mutate(date = qdate) |>
         dplyr::ungroup()
     }
     if (series == "CNP16OV") {
       df <- df |>
         dplyr::group_by(qdate) |>
-        dplyr::filter(date == max(date)) |>
+        dplyr::summarize(value = mean(value)) |>
         dplyr::mutate(date = qdate) |>
         dplyr::ungroup()
     }
@@ -82,8 +93,9 @@ pull_fred_data <- function(fred_api_key, vintage = F) {
     return(df)
   }
 
-  if (vintage == T) {
-    data <- Reduce(rbind, lapply(series, my_alfredr))
+  if (!is.null(vintage_date)) {
+    data <- Reduce(rbind, lapply(
+      series, my_alfredr, vintage_date = vintage_date))
   } else {
     data <- Reduce(rbind, lapply(
       series, my_fredr,

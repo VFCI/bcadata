@@ -4,10 +4,10 @@
 \alias{pull_tfp_data}
 \title{Pull TFP data from San Franciso Fed website}
 \usage{
-pull_tfp_data(vintage = FALSE)
+pull_tfp_data(replicate = FALSE)
 }
 \arguments{
-\item{vintage}{Boolean, use original paper vintage}
+\item{replicate}{Boolean, use original paper vintage}
 }
 \value{
 A tibble/data.frame
