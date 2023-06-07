@@ -15,7 +15,6 @@ pull_bcadata <- function(
     fred_api_key,
     replicate = FALSE,
     vintage_date = NULL) {
-
   fred_data <- pull_fred_data(fred_api_key, replicate, vintage_date)
 
   tfp_data <- pull_tfp_data(replicate)
