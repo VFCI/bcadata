@@ -60,11 +60,13 @@ There are two functions exported from the package:
 
 ``` r
 ## Construct the updated data series
-df <- pull_bcadata(fred_api_key = "XXXXXXXXXXXX")
+df <- pull_bcadata(fred_api_key = my_api_key)
 
 ## Chart comparing the updated series to the original data
 compare_bcadata(df)
 ```
+
+<img src="man/figures/README-update-1.png" width="100%" />
 
 The package includes the original dataset from the [author’s replication
 files](https://www.openicpsr.org/openicpsr/project/118082/version/V1/view).

@@ -52,6 +52,11 @@ This package requires a FRED API key to pull data from the St. Louis Fed.
 
 You can get an API key [here](https://fred.stlouisfed.org/docs/api/api_key.html).
 
+```{r, include = F}
+  ## Please get your own key from FRED
+  my_api_key <- "7fdf94c38c6355269067736a82bf7874"
+```
+
 ## Usage
 ```{r}
   library(bcadata)
@@ -59,9 +64,9 @@ You can get an API key [here](https://fred.stlouisfed.org/docs/api/api_key.html)
 
 There are two functions exported from the package:
 
-``` r
+```{r update, include = T, echo = T}
 ## Construct the updated data series
-df <- pull_bcadata(fred_api_key = "XXXXXXXXXXXX")
+df <- pull_bcadata(fred_api_key = my_api_key)
 
 ## Chart comparing the updated series to the original data
 compare_bcadata(df)
