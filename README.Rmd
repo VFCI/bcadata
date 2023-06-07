@@ -92,7 +92,7 @@ For the other macro time series, all are pulled using ALFRED, using the validati
 
 This is accomplished by setting the paramter `replicate` to `TRUE`.
 
-```{r replicate, include = T}
+```{r replicate, include = T, echo = F}
 
 replication <- pull_bcadata("XXXXXXXXXXXX", replicate = TRUE)
 

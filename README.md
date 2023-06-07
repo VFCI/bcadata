@@ -99,15 +99,9 @@ which is pulled using the validation date `"2018-07-28"`.
 
 This is accomplished by setting the paramter `replicate` to `TRUE`.
 
-``` r
-
-replication <- pull_bcadata("XXXXXXXXXXXX", replicate = TRUE)
-#> Warning: There was 1 warning in `mutate()`.
-#> ℹ In argument: `name = as.numeric(.data$name)`.
-#> Caused by warning:
-#> ! NAs introduced by coercion
-
-compare_bcadata(replication)
-```
+    #> Warning: There was 1 warning in `mutate()`.
+    #> ℹ In argument: `name = as.numeric(.data$name)`.
+    #> Caused by warning:
+    #> ! NAs introduced by coercion
 
 <img src="man/figures/README-replicate-1.png" width="100%" />
