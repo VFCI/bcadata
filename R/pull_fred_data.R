@@ -7,10 +7,9 @@
 #' @return A tibble/data.frame
 #'
 pull_fred_data <- function(
-  fred_api_key,
-  replicate = FALSE,
-  vintage_date = NULL
-  ) {
+    fred_api_key,
+    replicate = FALSE,
+    vintage_date = NULL) {
   qdate <- value <- NULL
   fredr::fredr_set_key(fred_api_key)
 
@@ -42,7 +41,6 @@ pull_fred_data <- function(
   }
 
   my_alfredr <- function(series, vintage_date) {
-
     if (replicate == TRUE && series == "GDPC1") vintage_date <- "2018-07-28"
 
     df <- alfred::get_alfred_series(series, "value",
@@ -95,7 +93,9 @@ pull_fred_data <- function(
 
   if (!is.null(vintage_date)) {
     data <- Reduce(rbind, lapply(
-      series, my_alfredr, vintage_date = vintage_date))
+      series, my_alfredr,
+      vintage_date = vintage_date
+    ))
   } else {
     data <- Reduce(rbind, lapply(
       series, my_fredr,
