@@ -12,7 +12,7 @@ pull_tfp_data <- function(replicate = FALSE) {
     )
     tfp_link <- tempfile(fileext = ".xlsx")
 
-    utils::download.file(vintage_link, tfp_link)
+    utils::download.file(vintage_link, tfp_link, mode = "wb")
   } else {
     tfp_link <-
       "http://www.frbsf.org/economic-research/files/quarterly_tfp.xlsx"
