@@ -98,9 +98,9 @@ validation date of `"2018-07-26"`, except for the series for real GDP,
 which is pulled using the validation date `"2018-07-28"`.
 
 This is accomplished by setting the paramter `replicate` to `TRUE`. Note
-that TFP is off by a constant value of 20.26 from the original data. The
-original author’s code does not make clear why or how this adjustment
-was made, so this package does not make it.
+that TFP is off by a constant value of `20.26` from the original data.
+The original author’s code does not make clear why or how this
+adjustment was made, so this package does not make it.
 
 ``` r
 
