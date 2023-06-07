@@ -52,7 +52,7 @@ transform_data <- function(fred_data, tfp_data) {
   ## Start the TFP series counting from same initial value as the paper
   ## Decided against including this, as it is just an ajustment by a constant
   ## and is not clear why the authors did it.
-  #df <- df |>
+  # df <- df |>
   #  dplyr::mutate(TFP = TFP - df[[1, "TFP"]] - 0.46)
 
   return(df)
