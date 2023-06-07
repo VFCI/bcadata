@@ -8,9 +8,12 @@
 [![R-CMD-check](https://github.com/vfci/vfci/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/vfci/vfci/actions/workflows/R-CMD-check.yaml)
 <!-- badges: end -->
 
-The goal of bcadata is to replicate and update the data used by
-Angeletos, Collard, and Dellas in their paper “Business Cycle Anatomy”
-(2020) in the American Economic Review.
+This package, `bcadata` replicates and updates the data used by
+Angeletos, Collard, and Dellas in their paper “[Business Cycle
+Anatomy](https://www.aeaweb.org/articles?id=10.1257/aer.20181174)”.
+
+> Angeletos, George-Marios, Fabrice Collard, and Harris Dellas. 2020.
+> “Business-Cycle Anatomy.” American Economic Review, 110 (10): 3030-70.
 
 The package pulls most of the data from
 [FRED](https://fred.stlouisfed.org) and TFP data from the [San Francisco
