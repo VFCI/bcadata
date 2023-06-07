@@ -85,7 +85,7 @@ This makes use of [ALFRED](https://alfred.stlouisfed.org), the archival version 
 To pull data using a specific vintage date:
 
 ``` r
-df <- pull_bcadata(fred_api_key = "XXXXXXXXXXXX", vintage_date = "2020-01-01")
+df <- pull_bcadata(fred_api_key = my_api_key, vintage_date = "2020-01-01")
 ```
 
 ## Replication of Original BCA data
@@ -103,7 +103,7 @@ The original author's code does not make clear why or how this adjustment was ma
 
 ```{r replicate, include = T, echo = T, warning = F}
 
-replication <- pull_bcadata("XXXXXXXXXXXX", replicate = TRUE)
+replication <- pull_bcadata(my_api_key, replicate = TRUE)
 
 compare_bcadata(replication)
 ```

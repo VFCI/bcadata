@@ -84,7 +84,7 @@ archival version of FRED.
 To pull data using a specific vintage date:
 
 ``` r
-df <- pull_bcadata(fred_api_key = "XXXXXXXXXXXX", vintage_date = "2020-01-01")
+df <- pull_bcadata(fred_api_key = my_api_key, vintage_date = "2020-01-01")
 ```
 
 ## Replication of Original BCA data
@@ -109,7 +109,7 @@ adjustment was made, so this package does not make it.
 
 ``` r
 
-replication <- pull_bcadata("XXXXXXXXXXXX", replicate = TRUE)
+replication <- pull_bcadata(my_api_key, replicate = TRUE)
 
 compare_bcadata(replication)
 ```
