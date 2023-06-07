@@ -101,3 +101,12 @@ This is accomplished by setting the paramter `replicate` to `TRUE`. Note
 that TFP is off by a constant value of 20.26 from the original data. The
 original author’s code does not make clear why or how this adjustment
 was made, so this package does not make it.
+
+``` r
+
+replication <- pull_bcadata("XXXXXXXXXXXX", replicate = TRUE)
+
+compare_bcadata(replication)
+```
+
+<img src="man/figures/README-replicate-1.png" width="100%" />
