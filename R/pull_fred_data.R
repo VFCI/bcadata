@@ -44,7 +44,8 @@ pull_fred_data <- function(
     if (replicate == TRUE && series == "GDPC1") vintage_date <- "2018-07-28"
 
     df <- alfred::get_alfred_series(series, "value",
-      realtime_start = vintage_date, realtime_end = vintage_date
+      realtime_start = vintage_date, realtime_end = vintage_date,
+      observation_start = "1947-01-01"
     ) |>
       dplyr::as_tibble() |>
       dplyr::select(date, value)
