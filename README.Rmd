@@ -51,11 +51,13 @@ This package requires a FRED API key to pull data from the St. Louis Fed.
 You can get an API key [here](https://fred.stlouisfed.org/docs/api/api_key.html).
 
 ## Usage
+```{r}
+  library(bcadata)
+```
 
 There are two functions exported from the package:
-``` r
-require(bcadata)
 
+``` r
 ## Construct the updated data series
 df <- pull_bcadata(fred_api_key = "XXXXXXXXXXXX")
 
@@ -68,23 +70,31 @@ The package includes the original dataset from the [author's replication files](
 original_bcadata
 ```
 
-And a tidy dataset of the VAR impulse response functions shown in the paper and appendix, for Figure 1, Figure 15 (a), and Figure 20.
-``` r 
-original_var_results
-```
-
 ## Vintage data
 
-There is also an option to use vintage data sources, in order to perfectly match the original paper dataset.
+There is also an option to use vintage data for the data pulled from FRED.
+This makes use of [ALFRED](https://alfred.stlouisfed.org), the archival version of FRED.
+
+To pull data using a specific vintage date:
+
+``` r
+df <- pull_bcadata(fred_api_key = "XXXXXXXXXXXX", vintage_date = "2020-01-01")
+```
+
+## Replication of Original BCA data
+
+With specific validation dates, this package can replicate the data used in the BCA paper.
 
 Data for TFP is pulled from [John G. Fernald's website](https://www.johnfernald.net/TFP) where he stores archived versions of the TFP data hosted at the San Francisco Fed.
 To replicate the original paper, the package pulls the file `data_quarterly_2018.05.03.xlsx`.
 
-To access vintages of the other data, the package makes use of ALFRED.
+For the other macro time series, all are pulled using ALFRED, using the validation date of `"2018-07-26"`, except for the series for real GDP, which is pulled using the validation date `"2018-07-28"`.
 
-To use the vintage links:
-``` r
-df <- pull_bcadata(fred_api_key = "XXXXXXXXXXXX", vintage = T)
+This is accomplished by setting the paramter `replicate` to `TRUE`.
+
+```{r replicate, include = T}
+
+replication <- pull_bcadata("XXXXXXXXXXXX", replicate = TRUE)
+
+compare_bcadata(replication)
 ```
-
-Temporary edit, edit 2
