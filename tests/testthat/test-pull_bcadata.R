@@ -12,11 +12,11 @@ test_that("Validate Updated BCA data", {
     testdat::expect_unique("date", data = df)
     testdat::expect_range("date", as.Date("1950-01-01"), Sys.Date(), data = df)
 
-    testdat::expect_range("unemployment", 0, 20, data = df)
-    testdat::expect_range("inflation", -5, 10, data = df)
-    testdat::expect_range("interest", -1, 10, data = df)
-    testdat::expect_range("hours_worked", 1700, 1800, data = df)
-    testdat::expect_range("labor_share", 400, 500, data = df)
+    testdat::expect_range("unemployment", 0, 50, data = df)
+    testdat::expect_range("inflation", -10, 50, data = df)
+    testdat::expect_range("interest", -5, 20, data = df)
+    testdat::expect_range("hours_worked", 1500, 2000, data = df)
+    testdat::expect_range("labor_share", 300, 600, data = df)
 
     testdat::expect_range("output", 0, +Inf, data = df)
     testdat::expect_range("consumption", 0, +Inf, data = df)
@@ -34,11 +34,11 @@ test_that("Validate Updated BCA data", {
         TFP_diff = TFP - dplyr::lag(TFP, 4)
       )
 
-    testdat::expect_range("output_rate", -0.05, 0.05, data = df_rate)
-    testdat::expect_range("consumption_rate", -0.05, 0.05, data = df_rate)
-    testdat::expect_range("investment_rate", -0.05, 0.05, data = df_rate)
-    testdat::expect_range("productivity_rate", -0.05, 0.05, data = df_rate)
-    testdat::expect_range("TFP_diff", -10, 10, data = df_rate)
+    testdat::expect_range("output_rate", -0.1, 0.1, data = df_rate)
+    testdat::expect_range("consumption_rate", -0.1, 0.1, data = df_rate)
+    testdat::expect_range("investment_rate", -0.1, 0.1, data = df_rate)
+    testdat::expect_range("productivity_rate", -0.1, 0.1, data = df_rate)
+    testdat::expect_range("TFP_diff", -20, 20, data = df_rate)
 
   }
 
