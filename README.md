@@ -5,7 +5,7 @@
 
 <!-- badges: start -->
 
-[![R-CMD-check](https://github.com/vfci/vfci/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/vfci/vfci/actions/workflows/R-CMD-check.yaml)
+[![R-CMD-check](https://github.com/vfci/bcadata/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/vfci/bcadata/actions/workflows/R-CMD-check.yaml)
 <!-- badges: end -->
 
 This package, `bcadata` replicates and updates the data used by

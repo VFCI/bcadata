@@ -16,7 +16,7 @@ knitr::opts_chunk$set(
 # bcadata
 
 <!-- badges: start -->
-[![R-CMD-check](https://github.com/vfci/vfci/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/vfci/vfci/actions/workflows/R-CMD-check.yaml)
+[![R-CMD-check](https://github.com/vfci/bcadata/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/vfci/bcadata/actions/workflows/R-CMD-check.yaml)
 <!-- badges: end -->
 
 This package, `bcadata` replicates and updates the data used by Angeletos, Collard, and Dellas in their paper "[Business Cycle Anatomy](https://www.aeaweb.org/articles?id=10.1257/aer.20181174)".
