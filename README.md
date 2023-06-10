@@ -5,9 +5,7 @@
 
 <!-- badges: start -->
 
-[![R-CMD-check](https://github.com/vfci/bcadata/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/vfci/bcadata/actions/workflows/R-CMD-check.yaml)
-
-[![codecov](https://codecov.io/gh/VFCI/bcadata/branch/main/graph/badge.svg?token=FX66WK5PQT)](https://codecov.io/gh/VFCI/bcadata)
+[![R-CMD-check](https://github.com/vfci/bcadata/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/vfci/bcadata/actions/workflows/R-CMD-check.yaml) [![codecov](https://codecov.io/gh/VFCI/bcadata/branch/main/graph/badge.svg?token=FX66WK5PQT)](https://codecov.io/gh/VFCI/bcadata)
 
 <!-- badges: end -->
 
