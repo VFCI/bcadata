@@ -1,3 +1,4 @@
 test_that("multiplication works", {
-  expect_equal(2 * 2, 4)
+  p <- compare_bcadata(original_bcadata)
+  expect_equal(class(p), c("gg", "ggplot"))
 })
